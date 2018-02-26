@@ -13,5 +13,8 @@ RUN apt-get update \
   python-dev \
   # PIP
   python-pip \
+  # AWS CLI
+  && pip install awscli \
   # SERVERLESS CLI
-  && npm install -g serverless 
+  && npm install -g serverless \
+  && sudo chown -R $USER:$(id -gn $USER) /root/.config
